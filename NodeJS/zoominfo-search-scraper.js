@@ -16,7 +16,7 @@ let allData = [];
       await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
 
       // Random delay to mimic human behavior
-      await page.waitForTimeout(Math.random() * 2000 + 1000);
+      await new Promise(r => setTimeout(r, Math.random() * 2000 + 1000));
 
       const scripts = await page.$$eval('script[type="application/json"]', nodes =>
         nodes.map(n => n.textContent)
@@ -44,7 +44,7 @@ let allData = [];
     }
 
     // Optional: small delay between pages
-    await page.waitForTimeout(Math.random() * 2000 + 1000);
+    await new Promise(r => setTimeout(r, Math.random() * 2000 + 1000));
   }
 
   await browser.close();

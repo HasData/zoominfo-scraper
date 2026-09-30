@@ -13,7 +13,7 @@ let allData = [];
     await page.goto(baseUrl, { waitUntil: 'domcontentloaded', timeout: 90000 });
 
     // Wait 1 to 3 seconds before reading the page
-    await page.waitForTimeout(Math.random() * 2000 + 1000);
+    await new Promise(r => setTimeout(r, Math.random() * 2000 + 1000));
 
     // Collect the text of every <script type="application/json"> tag
     const scripts = await page.$$eval('script[type="application/json"]', nodes =>
