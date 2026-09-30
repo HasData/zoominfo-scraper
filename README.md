@@ -38,22 +38,24 @@ Each language has its own folder with scripts ready to run.
 ## Project Structure
 
 ```
-zoominfo-scrapers/
+zoominfo-scraper/
 │
-├── python/
+├── Python/
 │   ├── zoominfo-profile-scraper.py
 │   ├── zoominfo-company-scraper.py
 │   ├── zoominfo-search-scraper.py
 │   ├── zoominfo-universal-scraper.py
 │   └── zoominfo-universal-scraper-proxy.py
 │
-├── nodejs/
+├── NodeJS/
 │   ├── zoominfo-profile-scraper.js
 │   ├── zoominfo-company-scraper.js
 │   ├── zoominfo-search-scraper.js
 │   ├── zoominfo-universal-scraper.js
-│   └── zoominfo-universal-scraper-proxy.js
+│   ├── zoominfo-universal-scraper-proxy.js
+│   └── universal-zoominfo-scraper-with-proxy.js
 │
+├── banner.png
 └── README.md
 ```
 
@@ -78,20 +80,21 @@ This section contains Python scripts for scraping ZoomInfo profiles, companies, 
 
 ## Node.js ZoomInfo Scrapers
 
-This section contains Node.js scripts for ZoomInfo scraping. The scripts follow a similar pattern to Python: extract JSON from pages, handle delays, and optionally use proxies.
+This section contains Node.js scripts for ZoomInfo scraping. They follow the same pattern as the Python scripts. Each one extracts the JSON embedded in the page and waits a random delay between steps, and the proxy variants route traffic through an authenticated proxy.
 
-| Script                                | Description                                                 |
-| ------------------------------------- | ----------------------------------------------------------- |
-| `zoominfo-profile-scraper.js`         | Scrapes individual profiles, extracts structured JSON data. |
-| `zoominfo-company-scraper.js`         | Scrapes company pages, exports metadata.                    |
-| `zoominfo-search-scraper.js`          | Scrapes search results with pagination.                     |
-| `zoominfo-universal-scraper.js`       | Universal scraper for any ZoomInfo URL.                     |
-| `zoominfo-universal-scraper-proxy.js` | Adds proxy support to the universal scraper.                |
+| Script                                     | Description                                                                   |
+| ------------------------------------------ | ----------------------------------------------------------------------------- |
+| `zoominfo-profile-scraper.js`              | Scrapes individual profiles, extracts structured JSON data.                   |
+| `zoominfo-company-scraper.js`              | Scrapes company pages, exports metadata.                                      |
+| `zoominfo-search-scraper.js`               | Scrapes search results with pagination.                                       |
+| `zoominfo-universal-scraper.js`            | Universal scraper for any ZoomInfo URL.                                       |
+| `zoominfo-universal-scraper-proxy.js`      | Adds proxy support to the universal scraper.                                  |
+| `universal-zoominfo-scraper-with-proxy.js` | The same script as `zoominfo-universal-scraper-proxy.js` under a second name. |
 
 **Notes:**
 
-* Uses Selenium Base in UC mode for more reliable scraping.
-* Can be run with headless mode or full browser.
+* Runs on Puppeteer. Install it with `npm install puppeteer`, which also downloads the Chrome build it drives.
+* The scripts open a visible browser window (`headless: false`). Set `headless: true` in `puppeteer.launch` to run without it.
 * JSON output is ready for parsing or further processing.
 * Proxy usage and [residential proxy rotation](https://hasdata.com/blog/rotating-proxies-for-web-scraping) is optional but recommended for large scraping tasks.
 
