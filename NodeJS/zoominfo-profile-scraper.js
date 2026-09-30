@@ -8,14 +8,14 @@ let allData = [];
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
 
-  // Открываем страницу с перезапуском при возможных проблемах
+  // Load the profile page
   try {
     await page.goto(baseUrl, { waitUntil: 'domcontentloaded', timeout: 90000 });
 
-    // Рандомная пауза, чтобы имитировать поведение человека
+    // Wait 1 to 3 seconds before reading the page
     await page.waitForTimeout(Math.random() * 2000 + 1000);
 
-    // Находим все <script type="application/json"> и забираем текст
+    // Collect the text of every <script type="application/json"> tag
     const scripts = await page.$$eval('script[type="application/json"]', nodes =>
       nodes.map(n => n.textContent)
     );
@@ -26,7 +26,7 @@ let allData = [];
 
         if (!data) continue;
 
-        // Убираем ненужные ключи
+        // Drop the hydration and CTA keys
         delete data.__nghData__;
         delete data.cta_config;
 
@@ -42,7 +42,7 @@ let allData = [];
 
   await browser.close();
 
-  // Сохраняем результат в JSON
+  // Save the result as JSON
   fs.writeFileSync("profile_data.json", JSON.stringify(allData, null, 2), "utf-8");
   console.log("Data saved to profile_data.json");
 })();
