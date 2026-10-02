@@ -4,7 +4,7 @@
 
 # ZoomInfo Scrapers (Python & Node.js)
 
-[![HasData_bannner](banner.png)](https://hasdata.com/)
+[![HasData_bannner](banner.png)](https://hasdata.com/?utm_source=github&utm_medium=syndication&utm_campaign=how-to-scrape-zoominfo&utm_content=zoominfo-scraper-readme)
 
 A collection of scripts for scraping ZoomInfo data (profiles, companies, search results, universal) in Python and NodeJS.
 
@@ -74,7 +74,7 @@ This section contains Python scripts for scraping ZoomInfo profiles, companies, 
 
 * All scripts export data in JSON format.
 * Random delays are used to reduce risk of blocks.
-* [Proxy](https://hasdata.com/blog/proxies-for-web-scraping) support helps with rate-limits and IP bans.
+* [Proxy](https://hasdata.com/blog/proxies-for-web-scraping?utm_source=github&utm_medium=syndication&utm_campaign=how-to-scrape-zoominfo&utm_content=zoominfo-scraper-readme) support helps with rate-limits and IP bans.
 * Can be adapted to scrape other sections of ZoomInfo by changing URLs.
 
 ## Node.js ZoomInfo Scrapers
@@ -94,11 +94,11 @@ This section contains Node.js scripts for ZoomInfo scraping. They follow the sam
 * Runs on Puppeteer. Install it with `npm install puppeteer`, which also downloads the Chrome build it drives.
 * The scripts open a visible browser window (`headless: false`). Set `headless: true` in `puppeteer.launch` to run without it.
 * JSON output is ready for parsing or further processing.
-* Proxy usage and [residential proxy rotation](https://hasdata.com/blog/rotating-proxies-for-web-scraping) is optional but recommended for large scraping tasks.
+* Proxy usage and [residential proxy rotation](https://hasdata.com/blog/rotating-proxies-for-web-scraping?utm_source=github&utm_medium=syndication&utm_campaign=how-to-scrape-zoominfo&utm_content=zoominfo-scraper-readme) is optional but recommended for large scraping tasks.
 
 ## Disclaimer
 
-These scripts are for **educational purposes** only. Check ZoomInfo’s Terms of Service and [legal guidance on web scraping](https://hasdata.com/blog/is-web-scraping-legal).
+These scripts are for **educational purposes** only. Check ZoomInfo’s Terms of Service and [legal guidance on web scraping](https://hasdata.com/blog/is-web-scraping-legal?utm_source=github&utm_medium=syndication&utm_campaign=how-to-scrape-zoominfo&utm_content=zoominfo-scraper-readme).
 
 ## Notes
 
@@ -109,6 +109,6 @@ These scripts are for **educational purposes** only. Check ZoomInfo’s Terms of
 
 ## 📎 More Resources
 
-* Guide: [The Complete Guide to ZoomInfo Scraping in Python](https://hasdata.com/blog/how-to-scrape-zoominfo)
+* Guide: [The Complete Guide to ZoomInfo Scraping in Python](https://hasdata.com/blog/how-to-scrape-zoominfo?utm_source=github&utm_medium=syndication&utm_campaign=how-to-scrape-zoominfo&utm_content=zoominfo-scraper-readme)
 * Discord: [Join the community](https://discord.com/invite/QeuPtWpkAt)
 * Star this repo if helpful ⭐
